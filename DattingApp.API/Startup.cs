@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using DattingApp.API.Data;
+using DattingApp.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -73,6 +74,7 @@ namespace DattingApp.API
 
                     if(error!= null)
                     {
+                        context.Response.addApplicationError(error.Error.Message);
                      await context.Response.WriteAsync(error.Error.Message);
                     }
                     
