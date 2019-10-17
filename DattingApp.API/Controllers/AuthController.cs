@@ -60,7 +60,7 @@ namespace DattingApp.API.Controllers
 
             var claims = new[]{
 
-    new Claim(ClaimTypes.NameIdentifier,userFromRepo.id.ToString()),
+    new Claim(ClaimTypes.NameIdentifier,userFromRepo.Id.ToString()),
     new Claim(ClaimTypes.Name,userFromRepo.Username)
 };
 
